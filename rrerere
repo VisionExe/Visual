@@ -1,0 +1,2 @@
+_G.wl_key="a623a62f67bdbc063e870ec875f24a498e915fde"
+loadstring(game:HttpGet('https://scripts.luawl.com/hosted/4000/20646/CDID|Premium.lua'))()
