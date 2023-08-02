@@ -1292,5 +1292,11 @@ function library:Create(title)
 				
 				funcs:SetValue(tonumber(text))
 			end)
-			return library
+			return funcs
 		end
+		return TabHolder
+	end
+	return Holder
+end
+return library
+end
