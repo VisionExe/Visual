@@ -206,9 +206,9 @@ function library:Create(title)
 	Open.Position = UDim2.new(0.0268528461, 0, 0.437037051, 0)
 	Open.Size = UDim2.new(0, 118, 0, 42)
 
-UICorner.Parent = EXE
+UICorner.Parent = Open
 
-TextLabel.Parent = EXE
+TextLabel.Parent = Open
 TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel.BackgroundTransparency = 90.000
 TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
@@ -220,7 +220,7 @@ TextLabel.Text = "Open/Close UI"
 TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel.TextSize = 14.000
 
-TextButton.Parent = EXE
+TextButton.Parent = Open
 TextButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 TextButton.BackgroundTransparency = 9.000
 TextButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
