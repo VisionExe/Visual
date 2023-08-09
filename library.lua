@@ -142,6 +142,7 @@ function drag(frame, hold) -- Skidded from Kiriot or Wally ~V3rmillion~
 end
 
 function library:Create(title)
+	local dogent = Instance.new("ScreenGui")
 	local ArtemisSpecialist = Instance.new("ScreenGui")
 	local MainFrame = Instance.new("Frame")
 	local MainFrameC = Instance.new("UICorner")
@@ -165,6 +166,8 @@ function library:Create(title)
     local UIGradient=Instance.new("UIGradient")
     local UIGradientTitle=Instance.new("UIGradient")
 	local Open = Instance.new("TextButton")
+
+	if syn and syn.protect_gui then syn.protect_gui(dogent) end
 
 
 
