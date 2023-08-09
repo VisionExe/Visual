@@ -198,20 +198,53 @@ function library:Create(title)
 		end
 	end
 
-	Open.Name = "Open"
+	Open.Name = "EXE"
 	Open.Parent = ArtemisSpecialist
-	Open.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
-	Open.Position = UDim2.new(0.00829315186, 0, 0.31107837, 0)
-	Open.Size = UDim2.new(0, 61, 0, 32)
-	Open.Font = Enum.Font.SourceSans
-	Open.Text = "Open/Close UI"
-	Open.TextColor3 = Color3.fromRGB(255, 255, 255)
-	Open.TextSize = 14.000
-	Open.Active = true
-	Open.Draggable = true
-	Open.MouseButton1Click:Connect(function()
-		ToggleUI()
-	end)
+	Open.BackgroundColor3 = Color3.fromRGB(41, 41, 41)
+	Open.BorderColor3 = Color3.fromRGB(41, 41, 41)
+	Open.BorderSizePixel = 0
+	Open.Position = UDim2.new(0.0268528461, 0, 0.437037051, 0)
+	Open.Size = UDim2.new(0, 118, 0, 42)
+
+UICorner.Parent = EXE
+
+TextLabel.Parent = EXE
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 90.000
+TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.BorderSizePixel = 0
+TextLabel.Position = UDim2.new(-0.347457618, 0, -0.095238097, 0)
+TextLabel.Size = UDim2.new(0, 200, 0, 50)
+TextLabel.Font = Enum.Font.GothamMedium
+TextLabel.Text = "Open/Close UI"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextSize = 14.000
+
+TextButton.Parent = EXE
+TextButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton.BackgroundTransparency = 9.000
+TextButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton.BorderSizePixel = 0
+TextButton.Size = UDim2.new(0, 117, 0, 42)
+TextButton.Font = Enum.Font.SourceSans
+TextButton.Text = ""
+TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton.TextSize = 14.000
+TextButton.MouseButton1Click:Connect(function()
+	ToggleUI()
+end)
+
+
+
+-- Scripts:
+
+local function HQDXIJI_fake_script() -- TextButton.Script 
+	local script = Instance.new('Script', TextButton)
+
+	ToggleUI()
+end
+coroutine.wrap(HQDXIJI_fake_script)()
+
 
 	MainFrameC.CornerRadius = UDim.new(0, 4)
 	MainFrameC.Name = "MainFrameC"
