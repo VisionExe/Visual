@@ -166,20 +166,6 @@ function library:Create(title)
     local UIGradientTitle=Instance.new("UIGradient")
 	local Open = Instance.new("TextButton")
 
-          Open.Name = "Open"
-          Open.Parent = dogent
-          Open.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
-          Open.Position = UDim2.new(0.00829315186, 0, 0.31107837, 0)
-          Open.Size = UDim2.new(0, 61, 0, 32)
-          Open.Font = Enum.Font.SourceSans
-          Open.Text = "Open/Close UI"
-          Open.TextColor3 = Color3.fromRGB(255, 255, 255)
-          Open.TextSize = 14.000
-          Open.Active = true
-          Open.Draggable = true
-          Open.MouseButton1Click:Connect(function()
-          MainFrame.Visible = not MainFrame.Visible
-          end)
 
 
 	function DestroyUI()
@@ -211,6 +197,21 @@ function library:Create(title)
 			Tween(MainFrame,UDim2.new(0,587,0,366),0.15)
 		end
 	end
+
+	Open.Name = "Open"
+	Open.Parent = dogent
+	Open.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+	Open.Position = UDim2.new(0.00829315186, 0, 0.31107837, 0)
+	Open.Size = UDim2.new(0, 61, 0, 32)
+	Open.Font = Enum.Font.SourceSans
+	Open.Text = "Open/Close UI"
+	Open.TextColor3 = Color3.fromRGB(255, 255, 255)
+	Open.TextSize = 14.000
+	Open.Active = true
+	Open.Draggable = true
+	Open.MouseButton1Click:Connect(function()
+		ToggleUI()
+	end)
 
 	MainFrameC.CornerRadius = UDim.new(0, 4)
 	MainFrameC.Name = "MainFrameC"
