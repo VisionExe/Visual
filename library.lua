@@ -238,13 +238,6 @@ end)
 
 -- Scripts:
 
-local function HQDXIJI_fake_script() -- TextButton.Script 
-	local script = Instance.new('Script', TextButton)
-
-	ToggleUI()
-end
-coroutine.wrap(HQDXIJI_fake_script)()
-
 
 	MainFrameC.CornerRadius = UDim.new(0, 4)
 	MainFrameC.Name = "MainFrameC"
