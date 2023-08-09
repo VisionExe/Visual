@@ -142,7 +142,6 @@ function drag(frame, hold) -- Skidded from Kiriot or Wally ~V3rmillion~
 end
 
 function library:Create(title)
-	local dogent = Instance.new("ScreenGui")
 	local ArtemisSpecialist = Instance.new("ScreenGui")
 	local MainFrame = Instance.new("Frame")
 	local MainFrameC = Instance.new("UICorner")
@@ -166,8 +165,6 @@ function library:Create(title)
     local UIGradient=Instance.new("UIGradient")
     local UIGradientTitle=Instance.new("UIGradient")
 	local Open = Instance.new("TextButton")
-
-	if syn and syn.protect_gui then syn.protect_gui(dogent) end
 
 
 
@@ -202,7 +199,7 @@ function library:Create(title)
 	end
 
 	Open.Name = "Open"
-	Open.Parent = dogent
+	Open.Parent = ArtemisSpecialist
 	Open.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
 	Open.Position = UDim2.new(0.00829315186, 0, 0.31107837, 0)
 	Open.Size = UDim2.new(0, 61, 0, 32)
