@@ -313,6 +313,7 @@ TopFrame.Parent = MainFrame
 TopFrame.BackgroundColor3 = theme.secondary
 TopFrame.Position = UDim2.new(0.0123288939, 0, 0.0191256832, 0)
 TopFrame.Size = UDim2.new(0, 575, 0, 33)
+TopFrame.Draggable = true
 
 SideFrameC_2.CornerRadius = UDim.new(0, 4)
 SideFrameC_2.Name = "SideFrameC"
