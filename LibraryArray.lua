@@ -202,6 +202,14 @@ local tweeninfo = TweenInfo.new(7, Enum.EasingStyle.Linear, Enum.EasingDirection
 local tween = TweenService:Create(UIGradient, tweeninfo, {Rotation = 360})
 tween:Play()
 
+function HideGlow()
+	if state then
+        DropShadowHolder.Visible = true
+    else
+        DropShadowHolder.Visible = false
+    end
+end
+
 ArrayField.DisplayOrder = 100
 LoadingFrame.Version.Text = Release
 
