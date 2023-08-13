@@ -1007,6 +1007,7 @@ function ToggleUI()
 			Hide()
 		end
 	end
+end
 
 TextButton.Parent = ArtemisSpecialist
 TextButton.BackgroundColor3 = Color3.fromRGB(41, 41, 41)
@@ -1273,105 +1274,98 @@ function ArrayFieldLibrary:CreateWindow(Settings)
 	local function NPLHKB_fake_script() 
 	local script = Instance.new('LocalScript', Topbar.Title)
 		
-		local button = script.Parent
-		local gradient = button.UIGradient
-		local ts = game:GetService("TweenService")
-		local ti = TweenInfo.new(1, Enum.EasingStyle.Linear, Enum.EasingDirection.Out)
-		local offset = {Offset = Vector2.new(1, 0)}
-		local create = ts:Create(gradient, ti, offset)
-		local startingPos = Vector2.new(-1, 0)
-		local list = {} 
-		local s, kpt = ColorSequence.new, ColorSequenceKeypoint.new
-		local counter = 0
-		local status = "down" 
-		gradient.Offset = startingPos
-		local function rainbowColors()
-		  local sat, val = 255, 255 
-		  for i = 1, 10 do 
-			  local hue = i * 17 
-			  table.insert(list, Color3.fromHSV(hue / 255, sat / 255, val / 255))
-		  end
-		end
-		rainbowColors()
-		gradient.Color = s({
-		  kpt(0, list[#list]),
-		  kpt(0.5, list[#list - 1]),
-		  kpt(1, list[#list - 2])
-		})
-		counter = #list
-		local function animate()
-		  create:Play()
-		  create.Completed:Wait() 
-		  gradient.Offset = startingPos 
-		  gradient.Rotation = 180
-		  if counter == #list - 1 and status == "down" then
-			  gradient.Color = s({
-				  kpt(0, gradient.Color.Keypoints[1].Value),
-				  kpt(0.5, list[#list]), 
-				  kpt(1, list[1]) 
-			  })
-			  counter = 1
-			  status = "up" 
-		  elseif counter == #list and status == "down" then 
-			  gradient.Color = s({
-				  kpt(0, gradient.Color.Keypoints[1].Value),
-				  kpt(0.5, list[1]),
-				  kpt(1, list[2])
-			  })
-			  counter = 2
-			  status = "up"
-		  elseif counter <= #list - 2 and status == "down" then 
-			  gradient.Color = s({
-				  kpt(0, gradient.Color.Keypoints[1].Value),
-				  kpt(0.5, list[counter + 1]), 
-				  kpt(1, list[counter + 2])
-			  })
-			  counter = counter + 2
-			  status = "up"
-		  end
-		  create:Play()
-		  create.Completed:Wait()
-		  gradient.Offset = startingPos
-		  gradient.Rotation = 0 
-		  if counter == #list - 1 and status == "up" then
-			  gradient.Color = s({ 
-		
-				  kpt(0, list[1]), 
-				  kpt(0.5, list[#list]), 
-				  kpt(1, gradient.Color.Keypoints[3].Value)
-			  })
-			  counter = 1
-			  status = "down"
-		  elseif counter == #list and status == "up" then
-			  gradient.Color = s({
-				  kpt(0, list[2]),
-				  kpt(0.5, list[1]), 
-				  kpt(1, gradient.Color.Keypoints[3].Value)
-			  })
-			  counter = 2
-			  status = "down"
-		  elseif counter <= #list - 2 and status == "up" then
-			  gradient.Color = s({
-				  kpt(0, list[counter + 2]), 
-				  kpt(0.5, list[counter + 1]), 
-				  kpt(1, gradient.Color.Keypoints[3].Value) 	
-			  })
-			  counter = counter + 2
-			  status = "down"
-		  end
-		  animate()
-		end
-		animate()
-		
-		end
-		coroutine.wrap(NPLHKB_fake_script)()
-		
-		drag(MainFrame, TopFrame)
-		
-		TabContainerL:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function()
-		TabContainer.CanvasSize = UDim2.new(0, 0, 0, TabContainerL.AbsoluteContentSize.Y + 18)
-		end)
+	local button = script.Parent
+	local gradient = button.UIGradient
+	local ts = game:GetService("TweenService")
+	local ti = TweenInfo.new(1, Enum.EasingStyle.Linear, Enum.EasingDirection.Out)
+	local offset = {Offset = Vector2.new(1, 0)}
+	local create = ts:Create(gradient, ti, offset)
+	local startingPos = Vector2.new(-1, 0)
+	local list = {} 
+	local s, kpt = ColorSequence.new, ColorSequenceKeypoint.new
+	local counter = 0
+	local status = "down" 
+	gradient.Offset = startingPos
+	local function rainbowColors()
+	  local sat, val = 255, 255 
+	  for i = 1, 10 do 
+		  local hue = i * 17 
+		  table.insert(list, Color3.fromHSV(hue / 255, sat / 255, val / 255))
+	  end
 	end
+	rainbowColors()
+	gradient.Color = s({
+	  kpt(0, list[#list]),
+	  kpt(0.5, list[#list - 1]),
+	  kpt(1, list[#list - 2])
+	})
+	counter = #list
+	local function animate()
+	  create:Play()
+	  create.Completed:Wait() 
+	  gradient.Offset = startingPos 
+	  gradient.Rotation = 180
+	  if counter == #list - 1 and status == "down" then
+		  gradient.Color = s({
+			  kpt(0, gradient.Color.Keypoints[1].Value),
+			  kpt(0.5, list[#list]), 
+			  kpt(1, list[1]) 
+		  })
+		  counter = 1
+		  status = "up" 
+	  elseif counter == #list and status == "down" then 
+		  gradient.Color = s({
+			  kpt(0, gradient.Color.Keypoints[1].Value),
+			  kpt(0.5, list[1]),
+			  kpt(1, list[2])
+		  })
+		  counter = 2
+		  status = "up"
+	  elseif counter <= #list - 2 and status == "down" then 
+		  gradient.Color = s({
+			  kpt(0, gradient.Color.Keypoints[1].Value),
+			  kpt(0.5, list[counter + 1]), 
+			  kpt(1, list[counter + 2])
+		  })
+		  counter = counter + 2
+		  status = "up"
+	  end
+	  create:Play()
+	  create.Completed:Wait()
+	  gradient.Offset = startingPos
+	  gradient.Rotation = 0 
+	  if counter == #list - 1 and status == "up" then
+		  gradient.Color = s({ 
+	
+			  kpt(0, list[1]), 
+			  kpt(0.5, list[#list]), 
+			  kpt(1, gradient.Color.Keypoints[3].Value)
+		  })
+		  counter = 1
+		  status = "down"
+	  elseif counter == #list and status == "up" then
+		  gradient.Color = s({
+			  kpt(0, list[2]),
+			  kpt(0.5, list[1]), 
+			  kpt(1, gradient.Color.Keypoints[3].Value)
+		  })
+		  counter = 2
+		  status = "down"
+	  elseif counter <= #list - 2 and status == "up" then
+		  gradient.Color = s({
+			  kpt(0, list[counter + 2]), 
+			  kpt(0.5, list[counter + 1]), 
+			  kpt(1, gradient.Color.Keypoints[3].Value) 	
+		  })
+		  counter = counter + 2
+		  status = "down"
+	  end
+	  animate()
+	end
+	animate()
+	
+	end
+	coroutine.wrap(NPLHKB_fake_script)()
 
 
 
