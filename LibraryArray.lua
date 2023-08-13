@@ -203,12 +203,13 @@ local tween = TweenService:Create(UIGradient, tweeninfo, {Rotation = 360})
 tween:Play()
 
 function HideGlow()
-        DropShadowHolder.Visible = true
+        DropShadowHolder.Visible = false
 end
 
 function ShowGlow()
-	DropShadowHolder.Visible = false
+	DropShadowHolder.Visible = true
 end
+
 ArrayField.DisplayOrder = 100
 LoadingFrame.Version.Text = Release
 
