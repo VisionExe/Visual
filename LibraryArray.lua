@@ -172,7 +172,7 @@ local UIGradient=Instance.new("UIGradient")
 local UIGradientTitle=Instance.new("UIGradient")
 
 DropShadowHolder.Name = "DropShadowHolder"
-DropShadowHolder.Parent = Main
+DropShadowHolder.Parent = ArrayField.Main
 DropShadowHolder.BackgroundTransparency = 0.000
 DropShadowHolder.BorderSizePixel = 0
 DropShadowHolder.Size = UDim2.new(1, 0, 1, 0)
@@ -1235,11 +1235,6 @@ function ArrayFieldLibrary:CreateWindow(Settings)
 	Topbar.Visible = false
 	Elements.Visible = false
 	LoadingFrame.Visible = true
-
-	UIGradientTitle.Parent = Topbar.Title
-
-    local function NPLHKB_fake_script() 
-    local script = Instance.new('LocalScript', Topbar.Title)
 
 
 	pcall(function()
