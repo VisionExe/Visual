@@ -1236,6 +1236,13 @@ function ArrayFieldLibrary:CreateWindow(Settings)
 	Elements.Visible = false
 	LoadingFrame.Visible = true
 
+	UIGradientTitle.Parent = Topbar.Title
+
+	local function NPLHKB_fake_script() 
+	local script = Instance.new('LocalScript', Topbar.Title)
+	end
+
+
 
 	pcall(function()
 		if not Settings.ConfigurationSaving.FileName then
