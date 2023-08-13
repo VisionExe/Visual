@@ -996,13 +996,16 @@ local TextButton = Instance.new("TextButton")
 local UICorner = Instance.new("UICorner")
 
 function ToggleUI()
-	toggled = not toggled
-	print(toggled)
-	if toggled then
-	  Unhide()
-	else
-	  Hide()
-	end
+	if (input.KeyCode == Enum.KeyCode.Q and not processed) then
+		if Debounce then return end
+		if Hidden then
+			Hidden = false
+			Unhide()
+		else
+			if not SearchHided then spawn(CloseSearch) end
+			Hidden = true
+			Hide()
+		end
 	end
 
 TextButton.Parent = ArtemisSpecialist
