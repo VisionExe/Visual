@@ -1000,7 +1000,6 @@ function ToggleUI()
 			Hidden = false
 			Unhide()
 		else
-			if not SearchHided then spawn(CloseSearch) end
 			Hidden = true
 			Hide()
 		end
