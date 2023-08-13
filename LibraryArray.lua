@@ -1009,7 +1009,7 @@ function ToggleUI()
 	end
 end
 
-TextButton.Parent = ArrayField.Main
+TextButton.Parent = ArrayField
 TextButton.BackgroundColor3 = Color3.fromRGB(41, 41, 41)
 TextButton.BorderColor3 = Color3.fromRGB(41, 41, 41)
 TextButton.BorderSizePixel = 0
@@ -1023,6 +1023,9 @@ TextButton.Draggable = true
 TextButton.MouseButton1Click:Connect(function()
 ToggleUI()
 end)
+
+UICorner.CornerRadius = UDim.new(0, 5)
+UICorner.Parent = TextButton
 
 function CloseSearch()
 	Debounce = true
