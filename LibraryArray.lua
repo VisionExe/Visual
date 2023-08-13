@@ -1009,7 +1009,7 @@ function ToggleUI()
 	end
 end
 
-TextButton.Parent = ArtemisSpecialist
+TextButton.Parent = ArrayField.Main
 TextButton.BackgroundColor3 = Color3.fromRGB(41, 41, 41)
 TextButton.BorderColor3 = Color3.fromRGB(41, 41, 41)
 TextButton.BorderSizePixel = 0
@@ -1195,7 +1195,7 @@ function Minimise()
 		spawn(CloseSideBar)
 	end
 	spawn(function()
-		FadeDescription(nil,true)
+
 	end)
 	for _, tabbtn in ipairs(TopList:GetChildren()) do
 		if tabbtn.ClassName == "Frame" and tabbtn.Name ~= "Placeholder" then
