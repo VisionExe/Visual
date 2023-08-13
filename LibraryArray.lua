@@ -996,8 +996,6 @@ local TextButton = Instance.new("TextButton")
 local UICorner = Instance.new("UICorner")
 
 function ToggleUI()
-	if (input.KeyCode == Enum.KeyCode.Q and not processed) then
-		if Debounce then return end
 		if Hidden then
 			Hidden = false
 			Unhide()
@@ -1007,7 +1005,6 @@ function ToggleUI()
 			Hide()
 		end
 	end
-end
 
 TextButton.Parent = ArrayField
 TextButton.BackgroundColor3 = Color3.fromRGB(41, 41, 41)
